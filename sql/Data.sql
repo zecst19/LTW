@@ -4,20 +4,20 @@ insert into user values(3, 'Manuel', 'Gomes','timonepumba@gmail.com','photo3','A
 insert into user values(4, 'Vasco', 'Ferreira','calcitrinmd@gmail.com','photo4','Papibaquigrafos1');
 insert into user values(5, 'Alcino', 'Mendes','victormoses@gmail.com','photo5','4Governo');
 insert into user values(6, 'Rodrigo', 'Santoro','monstrosvsaliens@gmail.com','photo6','VaiSer4');
-insert into user values(7, 'Joao', 'Gon√ßalves','pois.pois@gmail.com','photo7','Pois2');
-insert into user values(8, 'Nuno', 'Assun√ß√£o','montalegre@gmail.com','photo8','Pelopidas1');
-insert into user values(9, 'David', 'Magalh√£es','binhotinto@gmail.com','photo9','Salsichas430');
+insert into user values(7, 'Joao', 'GonÁalves','pois.pois@gmail.com','photo7','Pois2');
+insert into user values(8, 'Nuno', 'AssunÁ„o','montalegre@gmail.com','photo8','Pelopidas1');
+insert into user values(9, 'David', 'Magalh„es','binhotinto@gmail.com','photo9','Salsichas430');
 insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','photo10','AndreAlmeida19');
 
 insert into restaurant values(1,'TidBit','italian restaurant and pizzeria', 10, 'photo1');
-insert into restaurant values(2,'Casa de Pasto Z√© de Ver','tasca', 10, 'photo2');
-insert into restaurant values(3,'Condado','italian restaurant and pizzeria', 10, 'photo3');
-insert into restaurant values(4,'Mumadona','italian restaurant and pizzeria', 10, 'photo4');
+insert into restaurant values(2,'Casa de Pasto ZÈ de Ver','tasca', 8, 'photo2');
+insert into restaurant values(3,'Condado','italian restaurant and pizzeria', 5, 'photo3');
+insert into restaurant values(4,'Mumadona','italian restaurant and pizzeria', 7, 'photo4');
 
 insert into review values(1,1,1,10,'muito bicho');
 
 insert into location values(1,'Portugal','Porto');
-insert into location values(2,'Portugal','Guimar√£es';
+insert into location values(2,'Portugal','Guimar„es');
 insert into location values(3,'Portugal','Lisboa');
 
 insert into location_restaurant values(1,1);

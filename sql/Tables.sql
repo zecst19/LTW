@@ -10,7 +10,7 @@ CREATE TABLE restaurant(id_restaurant int primary key,
 						name char(50), 
 						description char(50), 
 						rate int,
-						photo char(50);
+						photo char(50));
 					
 CREATE TABLE review(id_review int primary key,
 					id_user references user(id_user),
@@ -22,5 +22,6 @@ CREATE TABLE location(id_location int primary key,
 						country char(50),
 						city char(50));
 						
-CREATE TABLE location_restaurant(id_location references location(id_location),
-								id_restaurant references restaurant(id_restaurant));
+CREATE TABLE location_restaurant(id_location int references location(id_location),
+								id_restaurant int references restaurant(id_restaurant),
+								primary_key(id_location,id_restaurant));
