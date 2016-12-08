@@ -8,7 +8,7 @@
 	$stmtlength->execute();
 	$length = $result = $stmt->fetchAll();
 	$_SESSION['length'] = count($length);
-	var_dump($_SESSION['length']);
+	//var_dump($_SESSION['length']);
 	
 	if(!isset($_SESSION['id']) || $_SESSION['id'] == NULL || $_SESSION['id'] == 0) {
 		$_SESSION['id'] = 1;
@@ -20,7 +20,7 @@
 		$_SESSION['id']--;
 	}
 	//var_dump($_SESSION['id']);
-	var_dump($_SESSION['id']);
+	//var_dump($_SESSION['id']);
 	$currId = strval($_SESSION['id']);
 	//var_dump($currId);
 	
