@@ -10,15 +10,16 @@
 	$_SESSION['length'] = count($length);
 	//var_dump($_SESSION['length']);
 	
-	if(!isset($_SESSION['id']) || $_SESSION['id'] == NULL || $_SESSION['id'] == 0 || !isset($_POST['Action'])) {
+	if(!isset($_SESSION['id']) || $_SESSION['id'] == NULL || $_SESSION['id'] == 0) {
 		$_SESSION['id'] = 1;
 	}
-	else if($_POST['Action'] == 'Next' && $_SESSION['id'] <= $_SESSION['length']-1){
+	if(isset($_POST['Action'])){
+	if($_POST['Action'] == 'Next' && $_SESSION['id'] <= $_SESSION['length']-1){
 		$_SESSION['id']++;
 	}
 	else if($_POST['Action'] == 'Previous' && $_SESSION['id'] >= 2){
 		$_SESSION['id']--;
-	}
+	}}
 	//var_dump($_SESSION['id']);
 	//var_dump($_SESSION['id']);
 	$currId = strval($_SESSION['id']);
@@ -62,12 +63,15 @@
 		<input  type="submit" name= "Action" value= "Next">
 		<input  type="submit" name= "Action" value= "Previous">
 	</form>
-	<form action="addReview.php" method="post">
+	<form action="deleteReview.php" method="post">
 		<p class="Reviews">Reviews</p>
 		<?php  foreach( $result as $row) {?>
 		<p><?= $row['commment'] ?> </p>
 		<p><?= $row['rate'] ?> / 10 </p>
+		<button type="submit" name= "reviewId" value= "<?= $row['id_review'] ?>">Delete</button>
 		<?php } ?>
+	</form>
+	<form action="addReview.php" method="post">
 		<label for="review">Review:</label>
 		<textarea rows="4" cols="50" name="review">
 		</textarea>

@@ -18,8 +18,8 @@
 	var_dump($review);
 	
 	
-	$insertQuery = $db->prepare('INSERT INTO review (id_user, id_restaurant, rate, commment)VALUES (?, ?, ?, ?)');
-	$insertQuery->execute(array($userId,$restaurantId,$rate,$review));
+	$insertQuery = $db->prepare('INSERT INTO review (id_review, id_user, id_restaurant, rate, commment)VALUES (?, ?, ?, ?, ?)');
+	$insertQuery->execute(array($review_id,$userId,$restaurantId,$rate,$review));
 	
 	
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
