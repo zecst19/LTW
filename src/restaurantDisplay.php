@@ -4,16 +4,16 @@
 	
 	$db = new PDO('sqlite:Tables.db');
 	
-	$stmtlength = $stmt = $db->prepare('SELECT * FROM restaurant');
+	$stmtlength = $db->prepare('SELECT * FROM restaurant');
 	$stmtlength->execute();
-	$length = $result = $stmt->fetchAll();
+	$length = $stmtlength->fetchAll();
 	$_SESSION['length'] = count($length);
 	//var_dump($_SESSION['length']);
 	
-	if(!isset($_SESSION['id']) || $_SESSION['id'] == NULL || $_SESSION['id'] == 0) {
+	if(!isset($_SESSION['id']) || $_SESSION['id'] == NULL || $_SESSION['id'] == 0 || !isset($_POST['Action'])) {
 		$_SESSION['id'] = 1;
 	}
-	if($_POST['Action'] == 'Next' && $_SESSION['id'] <= $_SESSION['length']-1){
+	else if($_POST['Action'] == 'Next' && $_SESSION['id'] <= $_SESSION['length']-1){
 		$_SESSION['id']++;
 	}
 	else if($_POST['Action'] == 'Previous' && $_SESSION['id'] >= 2){
@@ -24,13 +24,26 @@
 	$currId = strval($_SESSION['id']);
 	//var_dump($currId);
 	
-	$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_restaurant = ?');
+	/*$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_restaurant = ?');
+	$stmt->execute(array($currId));
+	$result = $stmt->fetchAll();
+	
+	$stmtreviews = $db->prepare("SELECT * FROM review WHERE id_restaurant = ?");
+	$stmtreviews->execute(array($currId));
+	//echo '..' . $currId . '..';
+	$resultReviews = $stmtreviews->fetchAll();*/
+	//var_dump($resultReviews);
+	
+	$stmt = $db->prepare(' SELECT * FROM restaurant a, review b WHERE a.id_restaurant = b.id_restaurant AND a.id_restaurant = ?');
 	$stmt->execute(array($currId));
 	
-		
-	$result = $stmt->fetchAll();
-	//var_dump($result[0]['name']);
 	
+	/*if(!$stmt->fetch()){
+		$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_restaurant = ?');
+		$stmt->execute(array($currId));
+	}*/
+	$result = $stmt->fetchAll();
+	//var_dump($result);
 	
 ?>
 <html>
@@ -40,16 +53,32 @@
  </head>
  <body>
 	<form action="restaurantDisplay.php" method="post">
-	<p class="RestaurantName">Name</p>
-	<p><?= $result[0]['name'] ?> </p>
-	<p class="RestaurantName">Description</p>
-	<p><?= $result[0]['description'] ?> </p>
-	<p class="RestaurantName">Rating</p>
-	<p><?= $result[0]['rate'] ?> </p>
-	<input  type="submit" name= "Action" value= "Next">
-	<input  type="submit" name= "Action" value= "Previous">
+		<p class="RestaurantName">Name</p>
+		<p><?= $result[0]['name'] ?> </p>
+		<p class="RestaurantDescription">Description</p>
+		<p><?= $result[0]['description'] ?> </p>
+		<p class="RestaurantRating">Rating</p>
+		<p><?= $result[0]['rate'] ?> </p>
+		<input  type="submit" name= "Action" value= "Next">
+		<input  type="submit" name= "Action" value= "Previous">
 	</form>
-	
+	<form action="addReview.php" method="post">
+		<p class="Reviews">Reviews</p>
+		<?php  foreach( $result as $row) {?>
+		<p><?= $row['commment'] ?> </p>
+		<p><?= $row['rate'] ?> / 10 </p>
+		<?php } ?>
+		<label for="review">Review:</label>
+		<textarea rows="4" cols="50" name="review">
+		</textarea>
+		<p> </p>
+		<label for="rate">Rate:</label>
+		<input type="number" name="rating" value="0" min="0" max="10" step="1">
+		<p> </p>
+		<button  type="submit" name= "restId" value= "<?= $result[0]['id_restaurant'] ?>">Send</button>
+		
+		
+	</form>
 	
  </body>
  </html>
