@@ -1,0 +1,25 @@
+fieldset 
+	{
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 30px;
+	margin-left: 30%;
+	margin-right: 30%;
+	}
+	fieldset legend 
+	{
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px ;
+    font-size: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 43%;
+	}
+	label
+	{
+		font: bold 20px Courier;
+		padding: 5px;
+	}
