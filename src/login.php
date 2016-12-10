@@ -1,5 +1,7 @@
 <?php
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+	}
 	$db = new PDO('sqlite:Tables.db');
 	//var_dump($db);
 	//var_dump($_POST['username'], $_POST['password']);

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
-	session_start();
+	include_once("LoginForm.php");
+	//TODO tirar o comentario se necessário
+	//session_start();
 	
 	$db = new PDO('sqlite:Tables.db');
 	
