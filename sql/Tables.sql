@@ -7,7 +7,8 @@ CREATE TABLE user(	id_user int primary key NOT NULL,
 					password char(32),
 					owner int);
 					
-CREATE TABLE restaurant(id_restaurant int primary key, 
+CREATE TABLE restaurant(id_restaurant int primary key,
+						id_user int, 
 						name char(50), 
 						description char(50), 
 						rate int,
@@ -40,22 +41,22 @@ insert into user values(8, 'Nuno', 'Assunção','montalegre@gmail.com','uphoto8'
 insert into user values(9, 'David', 'Magalhães','binhotinto@gmail.com','uphoto9','Salsichas430',0);
 insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','uphoto10','AndreAlmeida19',0);
 
-insert into restaurant values(1,'TidBit','italian restaurant and pizzeria', 10, 'photo1');
-insert into restaurant values(2,'Casa de Pasto Zé de Ver','tasca', 8, 'photo2');
-insert into restaurant values(3,'Condado','italian restaurant and pizzeria', 5, 'photo3');
-insert into restaurant values(4,'Mumadona','vinho e castanhas cruas', 7, 'photo4');
-insert into restaurant values(5,'Pinguim','jarros de receita', 6, 'photo5');
-insert into restaurant values(6,'Adega Amarela','tudo à descriçao', 9, 'photo6');
-insert into restaurant values(7,'Lusíada','a real', 10, 'photo7');
-insert into restaurant values(8,'Bufete Rapide','lusiada com as paredes escritas', 10, 'photo8');
-insert into restaurant values(9,'Sala 141','sandes e assim', 8, 'photo9');
-insert into restaurant values(10,'Taberna Belga','esperar 45 minutos e francesinhas', 6, 'photo10');
-insert into restaurant values(11,'Yuko','melhores francesinhas', 9, 'photo11');
-insert into restaurant values(12,'Taberna Londrina','mais francesinhas', 8, 'photo12');
-insert into restaurant values(13,'Portuscale','caro', 8, 'photo13');
-insert into restaurant values(14,'Luar','sandes e assim', 5, 'photo14');
-insert into restaurant values(15,'Honorato','hamburguers bicho', 9, 'photo15');
-insert into restaurant values(16,'Kebabs do Raza','melhores kebabs do mundo', 10, 'photo16');
+insert into restaurant values(1,1,'TidBit','italian restaurant and pizzeria', 10, 'photo1');
+insert into restaurant values(2,1,'Casa de Pasto Zé de Ver','tasca', 8, 'photo2');
+insert into restaurant values(3,1,'Condado','italian restaurant and pizzeria', 5, 'photo3');
+insert into restaurant values(4,1,'Mumadona','vinho e castanhas cruas', 7, 'photo4');
+insert into restaurant values(5,1,'Pinguim','jarros de receita', 6, 'photo5');
+insert into restaurant values(6,1,'Adega Amarela','tudo à descriçao', 9, 'photo6');
+insert into restaurant values(7,1,'Lusíada','a real', 10, 'photo7');
+insert into restaurant values(8,1,'Bufete Rapide','lusiada com as paredes escritas', 10, 'photo8');
+insert into restaurant values(9,1,'Sala 141','sandes e assim', 8, 'photo9');
+insert into restaurant values(10,1,'Taberna Belga','esperar 45 minutos e francesinhas', 6, 'photo10');
+insert into restaurant values(11,1,'Yuko','melhores francesinhas', 9, 'photo11');
+insert into restaurant values(12,1,'Taberna Londrina','mais francesinhas', 8, 'photo12');
+insert into restaurant values(13,1,'Portuscale','caro', 8, 'photo13');
+insert into restaurant values(14,1,'Luar','sandes e assim', 5, 'photo14');
+insert into restaurant values(15,1,'Honorato','hamburguers bicho', 9, 'photo15');
+insert into restaurant values(16,1,'Kebabs do Raza','melhores kebabs do mundo', 10, 'photo16');
 
 insert into review values(1,1,1,10,'muito bicho');
 insert into review values(2,2,2,10,'pouco bicho');
