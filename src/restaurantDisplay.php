@@ -39,13 +39,18 @@
 	
 	$stmt = $db->prepare(' SELECT * FROM restaurant a, review b WHERE a.id_restaurant = b.id_restaurant AND a.id_restaurant = ?');
 	$stmt->execute(array($currId));
-	
-	
+	$stmt2 = $db->prepare(' SELECT * FROM restaurant WHERE id_restaurant = ?');
+	$stmt2->execute(array($currId));
 	/*if(!$stmt->fetch()){
 		$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_restaurant = ?');
 		$stmt->execute(array($currId));
 	}*/
-	$result = $stmt->fetchAll();
+	if(($result = $stmt->fetchAll()) != FALSE){
+		$_SESSION['reviewed'] = TRUE;
+	}
+	else if(($result = $stmt2->fetchAll()) != FALSE){
+		$_SESSION['reviewed'] = NULL;
+	}
 	//var_dump($result);
 	
 ?>
@@ -67,11 +72,11 @@
 	</form>
 	<form action="deleteReview.php" method="post">
 		<p class="Reviews">Reviews</p>
-		<?php  foreach( $result as $row) {?>
+		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL){ foreach( $result as $row) {?>
 		<p><?= $row['commment'] ?> </p>
 		<p><?= $row['rate'] ?> / 10 </p>
 		<button type="submit" name= "reviewId" value= "<?= $row['id_review'] ?>">Delete</button>
-		<?php } ?>
+		<?php } }?>
 	</form>
 	<form action="addReview.php" method="post">
 		<label for="review">Review:</label>
@@ -84,6 +89,9 @@
 		<button  type="submit" name= "restId" value= "<?= $result[0]['id_restaurant'] ?>">Send</button>
 		
 		
+	</form>
+	<form action="addRestaurant.php" method="post">
+		<input  type="submit" name= "Reg" value= "Reg">
 	</form>
 	
  </body>
