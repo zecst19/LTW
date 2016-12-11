@@ -30,7 +30,7 @@ CREATE TABLE location_restaurant(id_location int REFERENCES location(id_location
 								
 								
 								
-insert into user values(1, 'Joao', 'Castro','pandasarehere@gmail.com','uphoto1','Salsichas420',0);
+insert into user values(1, 'Joao', 'Castro','pandasarehere@gmail.com','uphoto1','Salsichas420',1);
 insert into user values(2, 'Tiago', 'Pacheco','avidadepi@gmail.com','uphoto2','Bagacocommel2',0);
 insert into user values(3, 'Manuel', 'Gomes','timonepumba@gmail.com','uphoto3','Altibor5',0);
 insert into user values(4, 'Vasco', 'Ferreira','calcitrinmd@gmail.com','uphoto4','Papibaquigrafos1',0);
