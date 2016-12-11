@@ -4,7 +4,8 @@ CREATE TABLE user(	id_user int primary key NOT NULL,
 					last_name char(50),
 					email char(50),
 					photo char(50),
-					password char(32));
+					password char(32),
+					owner int);
 					
 CREATE TABLE restaurant(id_restaurant int primary key, 
 						name char(50), 
@@ -28,16 +29,16 @@ CREATE TABLE location_restaurant(id_location int REFERENCES location(id_location
 								
 								
 								
-insert into user values(1, 'Joao', 'Castro','pandasarehere@gmail.com','uphoto1','Salsichas420');
-insert into user values(2, 'Tiago', 'Pacheco','avidadepi@gmail.com','uphoto2','Bagacocommel2');
-insert into user values(3, 'Manuel', 'Gomes','timonepumba@gmail.com','uphoto3','Altibor5');
-insert into user values(4, 'Vasco', 'Ferreira','calcitrinmd@gmail.com','uphoto4','Papibaquigrafos1');
-insert into user values(5, 'Alcino', 'Mendes','victormoses@gmail.com','uphoto5','4Governo');
-insert into user values(6, 'Rodrigo', 'Santoro','monstrosvsaliens@gmail.com','uphoto6','VaiSer4');
-insert into user values(7, 'Joao', 'Gonçalves','pois.pois@gmail.com','uphoto7','Pois2');
-insert into user values(8, 'Nuno', 'Assunção','montalegre@gmail.com','uphoto8','Pelopidas1');
-insert into user values(9, 'David', 'Magalhães','binhotinto@gmail.com','uphoto9','Salsichas430');
-insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','uphoto10','AndreAlmeida19');
+insert into user values(1, 'Joao', 'Castro','pandasarehere@gmail.com','uphoto1','Salsichas420',0);
+insert into user values(2, 'Tiago', 'Pacheco','avidadepi@gmail.com','uphoto2','Bagacocommel2',0);
+insert into user values(3, 'Manuel', 'Gomes','timonepumba@gmail.com','uphoto3','Altibor5',0);
+insert into user values(4, 'Vasco', 'Ferreira','calcitrinmd@gmail.com','uphoto4','Papibaquigrafos1',0);
+insert into user values(5, 'Alcino', 'Mendes','victormoses@gmail.com','uphoto5','4Governo',0);
+insert into user values(6, 'Rodrigo', 'Santoro','monstrosvsaliens@gmail.com','uphoto6','VaiSer4',0);
+insert into user values(7, 'Joao', 'Gonçalves','pois.pois@gmail.com','uphoto7','Pois2',0);
+insert into user values(8, 'Nuno', 'Assunção','montalegre@gmail.com','uphoto8','Pelopidas1',0);
+insert into user values(9, 'David', 'Magalhães','binhotinto@gmail.com','uphoto9','Salsichas430',0);
+insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','uphoto10','AndreAlmeida19',0);
 
 insert into restaurant values(1,'TidBit','italian restaurant and pizzeria', 10, 'photo1');
 insert into restaurant values(2,'Casa de Pasto Zé de Ver','tasca', 8, 'photo2');
