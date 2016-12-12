@@ -8,12 +8,13 @@ CREATE TABLE user(	id_user int primary key NOT NULL,
 					owner int);
 					
 CREATE TABLE restaurant(id_restaurant int primary key,
-						id_user int, 
+						id_user int REFERENCES user(id_user), 
 						name char(50), 
 						description char(50), 
 						rate int,
 						contact char(9),
-						photo char(50));
+						photo char(50),
+						address char(50));
 					
 CREATE TABLE review(id_review int primary key,
 					id_user REFERENCES user(id_user),
@@ -42,22 +43,22 @@ insert into user values(8, 'Nuno', 'Assunção','montalegre@gmail.com','uphoto8'
 insert into user values(9, 'David', 'Magalhães','binhotinto@gmail.com','uphoto9','Salsichas430',0);
 insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','uphoto10','AndreAlmeida19',0);
 
-insert into restaurant values(1,1,'TidBit','italian restaurant and pizzeria', 10,'925128087', 'photo1');
-insert into restaurant values(2,1,'Casa de Pasto Zé de Ver','tasca', 8,'925128087', 'photo2');
-insert into restaurant values(3,1,'Condado','italian restaurant and pizzeria', 5,'925128087', 'photo3');
-insert into restaurant values(4,1,'Mumadona','vinho e castanhas cruas', 7,'925128087', 'photo4');
-insert into restaurant values(5,1,'Pinguim','jarros de receita', 6,'925128087', 'photo5');
-insert into restaurant values(6,1,'Adega Amarela','tudo à descriçao', 9,'925128087', 'photo6');
-insert into restaurant values(7,1,'Lusíada','a real', 10,'925128087', 'photo7');
-insert into restaurant values(8,1,'Bufete Rapide','lusiada com as paredes escritas', 10, '925128087','photo8');
-insert into restaurant values(9,1,'Sala 141','sandes e assim', 8,'925128087', 'photo9');
-insert into restaurant values(10,1,'Taberna Belga','esperar 45 minutos e francesinhas', 6, '925128087','photo10');
-insert into restaurant values(11,1,'Yuko','melhores francesinhas', 9,'925128087', 'photo11');
-insert into restaurant values(12,1,'Taberna Londrina','mais francesinhas', 8,'925128087', 'photo12');
-insert into restaurant values(13,1,'Portuscale','caro', 8,'925128087', 'photo13');
-insert into restaurant values(14,1,'Luar','sandes e assim', 5,'925128087', 'photo14');
-insert into restaurant values(15,1,'Honorato','hamburguers bicho', 9, '925128087','photo15');
-insert into restaurant values(16,1,'Kebabs do Raza','melhores kebabs do mundo', 10,'925128087', 'photo16');
+insert into restaurant values(1,1,'TidBit','italian restaurant and pizzeria', 10,'925128087', 'photo1','avenida de fernao de magalhaes 2961');
+insert into restaurant values(2,1,'Casa de Pasto Zé de Ver','tasca', 8,'925128087', 'photo2','avenida de fernao de magalhaes 2961');
+insert into restaurant values(3,1,'Condado','italian restaurant and pizzeria', 5,'925128087', 'photo3','avenida de fernao de magalhaes 2961');
+insert into restaurant values(4,1,'Mumadona','vinho e castanhas cruas', 7,'925128087', 'photo4','avenida de fernao de magalhaes 2961');
+insert into restaurant values(5,1,'Pinguim','jarros de receita', 6,'925128087', 'photo5','avenida de fernao de magalhaes 2961');
+insert into restaurant values(6,1,'Adega Amarela','tudo à descriçao', 9,'925128087', 'photo6','avenida de fernao de magalhaes 2961');
+insert into restaurant values(7,1,'Lusíada','a real', 10,'925128087', 'photo7','avenida de fernao de magalhaes 2961');
+insert into restaurant values(8,1,'Bufete Rapide','lusiada com as paredes escritas', 10, '925128087','photo8','avenida de fernao de magalhaes 2961');
+insert into restaurant values(9,1,'Sala 141','sandes e assim', 8,'925128087', 'photo9','avenida de fernao de magalhaes 2961');
+insert into restaurant values(10,1,'Taberna Belga','esperar 45 minutos e francesinhas', 6, '925128087','photo10','avenida de fernao de magalhaes 2961');
+insert into restaurant values(11,1,'Yuko','melhores francesinhas', 9,'925128087', 'photo11','avenida de fernao de magalhaes 2961');
+insert into restaurant values(12,1,'Taberna Londrina','mais francesinhas', 8,'925128087', 'photo12','avenida de fernao de magalhaes 2961');
+insert into restaurant values(13,1,'Portuscale','caro', 8,'925128087', 'photo13','avenida de fernao de magalhaes 2961');
+insert into restaurant values(14,1,'Luar','sandes e assim', 5,'925128087', 'photo14','avenida de fernao de magalhaes 2961');
+insert into restaurant values(15,1,'Honorato','hamburguers bicho', 9, '925128087','photo15','avenida de fernao de magalhaes 2961');
+insert into restaurant values(16,1,'Kebabs do Raza','melhores kebabs do mundo', 10,'925128087', 'photo16','avenida de fernao de magalhaes 2961');
 
 insert into review values(1,1,1,10,'muito bicho');
 insert into review values(2,2,2,10,'pouco bicho');
