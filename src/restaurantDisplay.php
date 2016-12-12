@@ -90,8 +90,12 @@
 		
 		
 	</form>
+	<?php //for testing purposes ?>
 	<form action="addRestaurant.php" method="post">
 		<input  type="submit" name= "Reg" value= "Reg">
+	</form>
+	<form action="userProfile.php" method="post">
+		<input  type="submit" name= "Profile" value= "Reg">
 	</form>
 	
  </body>
