@@ -17,7 +17,7 @@ session_start();
 	$user_id = strval($countedLength+1);
 	
 	
-	$insertQuery = $db->prepare('INSERT INTO user (id_user, first_name, last_name, email, photo, password)VALUES (?, ?, ?, ?, ?, ?)');
+	$insertQuery = $db->prepare('INSERT INTO user (id_user, first_name, last_name, email, photo, password,owner)VALUES (?, ?, ?, ?, ?, ?,0)');
 	$insertQuery->execute(array($user_id,$fname,$lname,$email,$photo,$password));
 	
 	

@@ -97,6 +97,9 @@
 	<form action="userProfile.php" method="post">
 		<input  type="submit" name= "Profile" value= "Reg">
 	</form>
+	<form action="allMyRestaurants.php" method="post">
+		<input  type="submit" name= "Profile" value= "Change">
+	</form>
 	
  </body>
  </html>

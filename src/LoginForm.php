@@ -6,10 +6,10 @@
  <head>
     <title>LoginForm</title>
     <meta charset="utf-8">
-	<link rel='stylesheet' type='text/css' href='LoginForm.css'>;
+	<link rel='stylesheet' type='text/css' href='LoginForm.css'>
   </head>
   <body>
-	<?php if (isset($_SESSION['username']) && ($_SESSION['username']== "failed")) { ?>
+	<?php if (isset($_SESSION['username']) && ($_SESSION['username']== "failed")) { $_SESSION['username'] = NULL; ?>
 	<form action="login.php" method="post">
 	<fieldset>
 	<legend>Log In:</legend>

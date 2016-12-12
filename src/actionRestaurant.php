@@ -8,7 +8,8 @@ session_start();
 	$username = $_SESSION['username'];
 	$stmtuser = $db->prepare('SELECT * FROM user WHERE email = ?');
 	$stmtuser->execute(array($username));
-	$user_id = $stmtuser->fetchAll();
+	$result= $stmtuser->fetchAll();
+	$user_id = $result[0]['id_user'];
 	$countedLength = count($length);
 	$Rname= $_POST['Name'];
 	$desc = $_POST['Desc'];
@@ -18,8 +19,8 @@ session_start();
 	$restaurant_id = strval($countedLength+1);
 	
 	
-	$insertQuery = $db->prepare('INSERT INTO restaurant (id_restaurant, name,description,rate,photo)VALUES (?, ?, ?, ?, ?)');
-	$insertQuery->execute(array($restaurant_id,$Rname,$desc,$rate,$photo));
+	$insertQuery = $db->prepare('INSERT INTO restaurant (id_restaurant, id_user,name,description,rate,photo)VALUES (?, ?, ?, ?, ?,?)');
+	$insertQuery->execute(array($restaurant_id,$user_id,$Rname,$desc,$rate,$photo));
 	
 	
 	header('Location: restaurantDisplay.php');
