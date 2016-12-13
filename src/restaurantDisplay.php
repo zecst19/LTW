@@ -80,12 +80,12 @@
 	</form>
 	<form action="deleteReview.php" method="post">
 		<p class="Reviews">Reviews</p>
-		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL )foreach( $result as $row) {?>
+		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL ){$_SESSION['reviewed'] = NULL;foreach( $result as $row) {?>
 		<p><?= $row['commment'] ?> </p>
 		<p><?= $row['rate'] ?> / 10 </p>
 		<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){ if($userid == $row['id_user'] ){ ?>
 		<button type="submit" name= "reviewId" value= "<?= $row['id_review'] ?>">Delete</button>
-		<?php }}} ?>
+		<?php }}}} ?>
 	</form>
 	<form action="addReview.php" method="post">
 		<label for="review">Review:</label>
@@ -108,6 +108,9 @@
 	</form>
 	<form action="allMyRestaurants.php" method="post">
 		<input  type="submit" name= "Profile" value= "Change">
+	</form>
+	<form action="restaurantPage.php" method="post">
+		<button  type="submit" name= "id" value= "<?= $result[0]['id_restaurant'] ?>">See Page</button>
 	</form>
 	
  </body>
