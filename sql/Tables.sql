@@ -64,7 +64,7 @@ insert into review values(1,1,1,10,'muito bicho');
 insert into review values(2,2,2,10,'pouco bicho');
 insert into review values(3,3,3,10,'tao bicho');
 insert into review values(4,4,4,10,'podia ser mais bicho');
-insert into review values(5,1,1,10,'omfg bicho');
+insert into review values(5,2,1,10,'omfg bicho');
 
 insert into location values(1,'Portugal','Porto');
 insert into location values(2,'Portugal','Guimarães');

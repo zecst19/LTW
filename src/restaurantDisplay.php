@@ -41,17 +41,25 @@
 	$stmt->execute(array($currId));
 	$stmt2 = $db->prepare(' SELECT * FROM restaurant WHERE id_restaurant = ?');
 	$stmt2->execute(array($currId));
-	/*if(!$stmt->fetch()){
-		$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_restaurant = ?');
-		$stmt->execute(array($currId));
-	}*/
+	
 	if(($result = $stmt->fetchAll()) != FALSE){
 		$_SESSION['reviewed'] = TRUE;
 	}
 	else if(($result = $stmt2->fetchAll()) != FALSE){
 		$_SESSION['reviewed'] = NULL;
 	}
-	//var_dump($result);
+	
+	$result2 = $stmt2->fetchAll();
+	//Utilizando o $result o user_id de cada elemnto do array é o id_user do comentário e não do owner, para obter esse utilizar $result2
+	//Obter username do actualmente logged in;
+	
+	if(isset($_SESSION['username']) && $_SESSION['username']!= NULL){
+		$stmt3 = $db->prepare(' SELECT * FROM user WHERE email = ?');
+		$stmt3->execute(array($_SESSION['username']));
+		$result3 = $stmt3->fetchAll();
+		$userid = $result3[0]['id_user'];
+	}
+	
 	
 ?>
 <html>
@@ -72,11 +80,12 @@
 	</form>
 	<form action="deleteReview.php" method="post">
 		<p class="Reviews">Reviews</p>
-		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL){ foreach( $result as $row) {?>
+		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL )foreach( $result as $row) {?>
 		<p><?= $row['commment'] ?> </p>
 		<p><?= $row['rate'] ?> / 10 </p>
+		<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){ if($userid == $row['id_user'] ){ ?>
 		<button type="submit" name= "reviewId" value= "<?= $row['id_review'] ?>">Delete</button>
-		<?php } }?>
+		<?php }}} ?>
 	</form>
 	<form action="addReview.php" method="post">
 		<label for="review">Review:</label>
