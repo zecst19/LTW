@@ -8,7 +8,6 @@
     <meta charset="utf-8">
   </head>
   <body>
-  <h1>Sublime</h1>
   <div id="register">
 	<form action="actionRegister.php" method="post">
 	<fieldset>
