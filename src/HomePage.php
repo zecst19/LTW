@@ -5,13 +5,13 @@
 		<link rel='stylesheet' type='text/css' href='HomePage.css'>
 	  </head> 
 	  <body> 
+		<!--<img src="../resources/ps.png" alt="Tá do limão!" width="300" height="300" style="border:5px solid black;"-->
+	    
+		<video playsinline autoplay muted loop poster="restaurantTeaser.jpg" id="bgvid">
+    <source src="../resources/restaurantTeaser.mp4" type="video/mp4">
+</video>
 	    <h3> Sublime</h3> 
-		<!--<img src="../resources/ps.png" alt="Tá do limão!" width="300" height="300" style="border:5px solid black;"
-	    <p>Encontre os melhores restaurantes, cafés e bares!</p> 
-	    <form  method="post" action="search.php?go"  id="searchform"> 
-	      <input  type="text" name="name"> 
-	      <input  type="submit" name="submit" value="Search"> 
-	    </form>-->
+
 	  </body> 
 	</html> 
 	</p> 

@@ -4,10 +4,21 @@
   font-weight: bold;
 }
 
+body {
+	margin: 0;
+}
+
 h3 {
 	font-family: MyCroissant;
 	font-size: 300%;
-	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+#bgvid {
+	left: 50%;
+	top: 50%;
 	position: absolute;
-	margin: 0px;
+	transform: translate(-50%, -50%);
 }
