@@ -57,6 +57,7 @@
 		<?php }}}} ?>
 	</form>
 	<form action="addReview.php" method="post">
+	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){?>
 		<label for="review">Review:</label>
 		<textarea rows="4" cols="50" name="review">
 		</textarea>
@@ -65,7 +66,7 @@
 		<input type="number" name="rating" value="0" min="0" max="10" step="1">
 		<p> </p>
 		<button  type="submit" name= "restId" value= "<?= $result[0]['id_restaurant'] ?>">Send</button>
-		
+	<?php } ?>	
 		
 	</form>
  </body>

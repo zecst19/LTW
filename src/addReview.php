@@ -7,8 +7,14 @@
 	$countedLength = count($length);
 	$review= strval($_POST['review']);
 	$rate = strval($_POST['rating']);
-	//TODO teste - mudar depois
-	$userId = strval(1);
+	if(isset($_SESSION['username']) && $_SESSION['username']!= NULL){
+		$stmt3 = $db->prepare(' SELECT * FROM user WHERE email = ?');
+		$stmt3->execute(array($_SESSION['username']));
+		$result3 = $stmt3->fetchAll();
+		$userId = $result3[0]['id_user'];
+	}else{
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	}
 	$restaurantId = strval($_POST['restId']);
 	$review_id = strval($countedLength+1);
 	var_dump($review_id);

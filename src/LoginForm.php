@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
-	//session_start();
-	//if(!isset($_SESSION['username'])||($_SESSION['username'] == NULL )|| ($_SESSION['username']== "failed")){include_once "registerUser.php";} 
+	session_start();
 ?>
 <html>
  <head>
@@ -10,7 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='LoginForm.css'>
   </head>
   <body>
-  
 	<?php if (isset($_SESSION['username']) && ($_SESSION['username']== "failed")) { $_SESSION['username'] = NULL; ?>
 	<div id="login">
 	<form action="login.php" method="post">
@@ -18,8 +16,8 @@
 	<legend align="top">Log In</legend>
 	<label>
      Username: <input type="text" name="username" placeholder="Username">
-	 </label>
-	 <label>
+	</label>
+	<label>
      Password: <input type="password" name="password" placeholder="Password">
 	 </label>
      <input  type="submit" value= "Log In">
@@ -37,8 +35,8 @@
 	<legend align="top">Log In</legend>
 	<label>
      Username: <input type="text" name="username" placeholder="Username">
-	 </label>
-	 <label>
+	  </label>
+     <label>
      Password: <input type="password" name="password" placeholder="Password">
 	 </label>
      <input  type="submit" value= "Log In">
