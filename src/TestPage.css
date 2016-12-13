@@ -1,0 +1,7 @@
+body {
+    /*background-color: #f7faff;*/
+	background-image: url("../resources/eder.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
