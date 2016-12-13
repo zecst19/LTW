@@ -1,25 +1,62 @@
-fieldset 
-	{
+body{
+	background: #ffffff;
+	margin: 0px;
+}
+
+h1{
+	font-family: sans-serif;
+	text-align: center;
+	margin-top:0px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #cb202d;
+}
+
+fieldset, legend{
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
     font-family: sans-serif;
-    border: 5px solid #1F497D;
+    border: 5px solid #cb202d;
+	border-style: solid hidden hidden;
     background: #ddd;
-    border-radius: 5px;
     padding: 30px;
-	margin-left: 30%;
-	margin-right: 30%;
-	}
-	fieldset legend 
-	{
-    background: #1F497D;
-    color: #fff;
-    padding: 5px 10px ;
-    font-size: 32px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 5px #ddd;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+	
+legend {
+	text-align: center;
+	color: #cb202d;
+	font-size: 32px;
+    padding: 5px 10px ; 
+    border: 5px solid #cb202d;
+	border-style: solid hidden hidden;
     margin-left: 43%;
-	}
-	label
-	{
-		font: bold 20px Courier;
-		padding: 5px;
-	}
+	margin-top: 30%;
+	overflow: hidden;
+    white-space: nowrap;
+	margin-top: 20%;
+	
+}
+
+label{
+	font: bold 20px Courier;
+	padding: 5px;
+}
+
+#register {
+	position: static;
+	width: 50%;
+    float: right;
+    height: 200px;
+}
+
+#login {
+	position: static;
+	width: 50%;
+    float: left;
+    height: 200px;
+}
