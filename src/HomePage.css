@@ -4,21 +4,39 @@
   font-weight: bold;
 }
 
-body {
+body
+{
+    background-color: #f8e0b3;
 	margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+   body {
+      width:420px;
+   }
+}
+
+@media screen and (min-width: 800px) {
+   body {
+      width:720px;
+   }
 }
 
 h3 {
 	font-family: MyCroissant;
-	font-size: 300%;
-	position: fixed;
-	top: 50%;
-	left: 50%;
+	font-size: 500%;
+	color: white;
+	text-shadow: -3px 0 #000000,0 3px #000000, 3px 0 #000000,0 -3px #000000;
+	position: absolute;
+	margin: 0;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 #bgvid {
+	position: absolute;
 	left: 50%;
 	top: 50%;
-	position: absolute;
 	transform: translate(-50%, -50%);
 }
