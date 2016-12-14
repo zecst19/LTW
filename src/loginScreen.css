@@ -1,3 +1,8 @@
+@font-face {
+  font-family: MyCroissant;
+  src: url("../fonts/CroissantOne-Regular.ttf");
+}
+
 body{
 	background: #ffffff;
 	margin: 0px;
@@ -7,26 +12,15 @@ body{
 	background-attachment: fixed;*/
 }
 
-@font-face {
-  font-family: MyCroissant;
-  src: url("../fonts/CroissantOne-Regular.ttf");
-  font-weight: bold;
-}
-
 h1{
 	font-family: MyCroissant;
 	text-align: left;
 	margin-top:0px;
 	padding-top: 60px;
 	padding-bottom: 60px;
-	padding-left: 60px;
 	background-color: #cb202d;
-
 }
 
-a{
-	color: inherit;
-}
 
 fieldset, legend{
 	margin: 0;

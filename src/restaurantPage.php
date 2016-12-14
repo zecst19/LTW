@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	include_once("loginScreen.php");
+	include_once("header.php");
 	//TODO tirar o comentario se necessário
 	//session_start();
 	
@@ -40,7 +40,7 @@
 ?>
 <html>
  <head>
-    <title>restaurantDisplay</title>
+    <title>restaurantPage</title>
     <meta charset="utf-8">
  </head>
  <body>
@@ -48,7 +48,7 @@
 	<p><?= $result2[0]['name'] ?> </p>
 	<p class="RestaurantDescription">Description</p>
 	<p><?= $result2[0]['description'] ?> </p>
-	<p class="RestaurantAdress">Adress</p>
+	<p class="RestaurantAddress">Address</p>
 	<p><?= $result2[0]['address'] ?> </p>
 	<p class="RestaurantRating">Rating</p>
 	<p><?= $result2[0]['rate'] ?> </p>
