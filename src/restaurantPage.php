@@ -70,7 +70,7 @@
 		<label for="rate">Rate:</label>
 		<input type="number" name="rating" value="0" min="0" max="10" step="1">
 		<p> </p>
-		<button  type="submit" name= "restId" value= "<?= $result[0]['id_restaurant'] ?>">Send</button>
+		<button  type="submit" name= "restId" value= "<?= $result2[0]['id_restaurant'] ?>">Send</button>
 	<?php } ?>
 		</form>
 		<form action="changeRestaurant.php" method="post">
