@@ -24,9 +24,9 @@
     <meta charset="utf-8">
  </head>
  <body>
-	<form action="changeRestaurant.php" method="post">
+	<form action="restaurantPage.php" method="post">
 	<?php if(!isset($_SESSION['nousername'])){ foreach( $result as $row) { ?>
-		<p class="RestaurantName">Name</p>
+		<p class="RestaurantName">Restaurant Name</p>
 		<p><?= $row['name'] ?> </p>
 		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">Send</button>
 		<?php } }?>

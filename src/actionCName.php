@@ -7,7 +7,7 @@
 	if(isset($_POST['Fname'] ) && isset($_POST['Lname'] )){
 		$stmt = $db->prepare('UPDATE user SET first_name = ?, last_name = ?  WHERE email = ?');
 		$stmt->execute(array($_POST['Fname'],$_POST['Lname'],$username));
-		header('Location: restaurantDisplay.php');
+		header('Location: userProfile.php');
 	}
 	else{
 		$_SESSION['namefailed'] = TRUE;

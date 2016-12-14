@@ -17,7 +17,7 @@
 		$stmt->execute(array($_POST['Cont'],$_POST['restId']));
 	}
 	
-	header('Location: allMyRestaurants.php');
+	header('Location: restaurantPage.php');
 	
 
 

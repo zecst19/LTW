@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <?php
-	include_once("LoginForm.php");
+	session_start();
+	include_once("loginScreen.php");
 	//TODO tirar o comentario se necessário
 	//session_start();
 	
 	$db = new PDO('sqlite:Tables.db');
+	if(isset($_POST['restId']) && $_POST['restId']!= NULL){
+		$_SESSION['id'] = $_POST['restId'];
+	}
+	//var_dump($_POST['restId']);
 	$currId = strval($_SESSION['id']);
 	
 	
@@ -16,7 +21,7 @@
 	if(($result = $stmt->fetchAll()) != FALSE){
 		$_SESSION['reviewed'] = TRUE;
 	}
-	else if(($result = $stmt2->fetchAll()) != FALSE){
+	else{
 		$_SESSION['reviewed'] = NULL;
 	}
 	
@@ -66,7 +71,13 @@
 		<input type="number" name="rating" value="0" min="0" max="10" step="1">
 		<p> </p>
 		<button  type="submit" name= "restId" value= "<?= $result[0]['id_restaurant'] ?>">Send</button>
-	<?php } ?>	
+	<?php } ?>
+		</form>
+		<form action="changeRestaurant.php" method="post">
+	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){ if($userid == $result2[0]['id_user'] ){ ?>
+		<button  type="submit" name= "restId" value= "<?= $result2[0]['id_restaurant'] ?>">Change Restaurant Parameters</button>
+	<?php }}?>
+	
 		
 	</form>
  </body>

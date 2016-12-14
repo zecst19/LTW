@@ -25,8 +25,11 @@
 	 <p>Try Again</p>
 	</form>
 	<?php }else if (isset($_SESSION['username']) && ($_SESSION['username']!= NULL)) { ?>
+	<form action="userProfile.php" method="post">
+	<p class="Logged IN!">Welcome <?= $_SESSION['username']?></p>
+	<input  type="submit" value= "See Profile">
+	</form>
 	<form action="logout.php" method="post">
-	<p class="Logged IN!">LOGGED IN!</p>
 	<input  type="submit" value= "Log Out">
 	</form>
 	<?php } else { ?>

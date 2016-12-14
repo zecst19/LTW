@@ -23,7 +23,7 @@ session_start();
 	$insertQuery->execute(array($restaurant_id,$user_id,$Rname,$desc,$rate,$photo));
 	
 	
-	header('Location: restaurantDisplay.php');
+	header('Location: userProfile.php');
 
 
 

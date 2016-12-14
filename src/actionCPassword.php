@@ -14,7 +14,7 @@
 		$stmt = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
 		$stmt->execute(array($_POST['password'],$username));
 		$_SESSION['passchecker'] = NULL;
-		header('Location: restaurantDisplay.php');
+		header('Location: userProfile.php');
 	}
 	else{
 		$_SESSION['passfailed'] = TRUE;
