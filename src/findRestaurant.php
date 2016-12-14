@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
+	include_once("loginScreen.php");
 	$db = new PDO('sqlite:Tables.db');
 	$variable = $_POST['variable'];
 	//$variable1 = 7;
@@ -31,8 +32,6 @@
 		$_SESSION['failed'] = TRUE;
 	}
 	
-	var_dump($result);
-	
 ?>
 <html>
  <head>
@@ -40,21 +39,17 @@
     <meta charset="utf-8">
  </head>
  <body>
-	<form action="restaurantDisplay.php" method="post">
+	<form action="restaurantPage.php" method="post">
 	<?php if(isset($_SESSION['failed'])) { ?>
 		<p> AI O Q </p>
 	<?php $_SESSION['failed'] = NULL; ?>
 	<?php } ?>
 	<?php  foreach( $result as $row) {?>
-		<p class="RestaurantName">Name</p>
+		<p class="RestaurantName">Restaurant Name</p>
 		<p><?= $row['name'] ?> </p>
-		<p class="RestaurantDescription">Description</p>
-		<p><?= $row['description'] ?> </p>
-		<p class="RestaurantRating">Rating</p>
-		<p><?= $row['rate'] ?> </p>
+		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">Restaurant Page</button>
 	<?php } ?>
-		<input  type="submit" name= "Action" value= "Next">
-		<input  type="submit" name= "Action" value= "Previous">
+		
 	</form>
  </body>
  
