@@ -12,7 +12,7 @@
   <?php if(isset($_SESSION['namefailed'] ) && ($_SESSION['namefailed'] != NULL)){ $_SESSION['namefailed'] = NULL;?>
 	<form action="actionCName.php" method="post">
 		<fieldset>
-		<legend>Log In:</legend>
+		<legend>Change Name:</legend>
 		<label>
 		One of the fields not filled!
 		First Name: <input type="text" name="Fname" placeholder="First Name">
@@ -24,7 +24,7 @@
   <?php }else { ?>
   <form action="actionCName.php" method="post">
 		<fieldset>
-		<legend>Log In:</legend>
+		<legend>Change Name:</legend>
 		<label>
 		First Name: <input type="text" name="Fname" placeholder="First Name">
 		Last Name:  <input type="text" name="Lname" placeholder="Last Name">

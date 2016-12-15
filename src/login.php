@@ -3,19 +3,16 @@
     session_start();
 	}
 	$db = new PDO('sqlite:Tables.db');
+	 $userName= htmlspecialchars($_POST['username']);
+	 $password= htmlspecialchars($_POST['password']);
 	//var_dump($db);
 	//var_dump($_POST['username'], $_POST['password']);
-	function userExists($username, $password) {
-    global $db;
-    
-    $stmt = $db->prepare('SELECT * FROM user WHERE email = ? AND password = ?');
-    $stmt->execute(array($username, $password));  
-
-    return $stmt->fetch() !== false;
-	}
-	var_dump($_POST['username']);
-	if(userExists($_POST['username'], $_POST['password'])){
-		$_SESSION['username'] = $_POST['username'];
+    $stmt = $db->prepare('SELECT * FROM user WHERE email = ?');
+    $stmt->execute(array($userName));  
+	$user = $stmt->fetch();
+	//var_dump($_POST['username']);
+	if($user !== false && password_verify($password, $user['password'])){
+		$_SESSION['username'] = $userName;
 	}
 	else{
 		$_SESSION['username'] = "failed";

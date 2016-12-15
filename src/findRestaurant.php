@@ -3,7 +3,7 @@
 	session_start();
 	include_once("loginScreen.php");
 	$db = new PDO('sqlite:Tables.db');
-	$variable = $_POST['variable'];
+	$variable = htmlspecialchars($_POST['variable']);
 	//$variable1 = 7;
 	//$variable = "7";
 	

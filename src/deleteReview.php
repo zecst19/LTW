@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	$db = new PDO('sqlite:Tables.db');
-	$reviewId = strval($_POST['reviewId']);
+	$review = htmlspecialchars($_POST['reviewId']);
+	$reviewId = strval($review);
 	$deleteQuery = $db->prepare('DELETE FROM review WHERE id_review = ? ');
 	$deleteQuery->execute(array($reviewId));
 	

@@ -6,10 +6,11 @@
 	//session_start();
 	
 	$db = new PDO('sqlite:Tables.db');
-	if(isset($_POST['restId']) && $_POST['restId']!= NULL){
-		$_SESSION['id'] = $_POST['restId'];
+	$restId = htmlspecialchars($_POST['restId']);
+	if(isset($restId) && $restId!= NULL){
+		$_SESSION['id'] = $restId;
 	}
-	//var_dump($_POST['restId']);
+	//var_dump($restId);
 	$currId = strval($_SESSION['id']);
 	
 	

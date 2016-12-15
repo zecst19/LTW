@@ -5,8 +5,11 @@
 	$stmtlength->execute();
 	$length = $stmtlength->fetchAll();
 	$countedLength = count($length);
-	$review= strval($_POST['review']);
-	$rate = strval($_POST['rating']);
+	$hreview = htmlspecialchars($_POST['review']);
+	$hrate = htmlspecialchars($_POST['rating']);
+	$hrestaurantId = htmlspecialchars($_POST['restId']);
+	$review= strval($hreview);
+	$rate = strval($hrate);
 	if(isset($_SESSION['username']) && $_SESSION['username']!= NULL){
 		$stmt3 = $db->prepare(' SELECT * FROM user WHERE email = ?');
 		$stmt3->execute(array($_SESSION['username']));
@@ -15,7 +18,7 @@
 	}else{
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	}
-	$restaurantId = strval($_POST['restId']);
+	$restaurantId = strval($hrestaurantId);
 	$review_id = strval($countedLength+1);
 	/*var_dump($review_id);
 	var_dump($userId);

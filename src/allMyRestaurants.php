@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	$db = new PDO('sqlite:Tables.db');
 	if(!isset($_SESSION['username']) && ($_SESSION['username'] == NULL)){
 		$_SESSION['nousername'] = TRUE; 

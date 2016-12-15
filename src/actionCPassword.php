@@ -6,13 +6,16 @@
 	$stmtuser = $db->prepare('SELECT * FROM user WHERE email = ?');
 	$stmtuser->execute(array($username));
 	$firstResult = $stmtuser->fetchAll();
-	if($_POST['password'] == $_POST['repassword']){
+	$options = ['cost' => 12];
+	$password = htmlspecialchars($_POST['password']);
+	$repassword = htmlspecialchars($_POST['repassword']);
+	if($password == $repassword){
 		$_SESSION['passchecker'] = TRUE;
 	}
 	
 	if(isset($_SESSION['passchecker'] ) && $_SESSION['passchecker'] != NULL){
 		$stmt = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
-		$stmt->execute(array($_POST['password'],$username));
+		$stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options),$username));
 		$_SESSION['passchecker'] = NULL;
 		header('Location: userProfile.php');
 	}

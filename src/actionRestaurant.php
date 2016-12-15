@@ -11,9 +11,9 @@ session_start();
 	$result= $stmtuser->fetchAll();
 	$user_id = $result[0]['id_user'];
 	$countedLength = count($length);
-	$Rname= $_POST['Name'];
-	$desc = $_POST['Desc'];
-	$rate = $_POST['rating'];
+	$Rname= htmlspecialchars($_POST['Name']);
+	$desc = htmlspecialchars($_POST['Desc']);
+	$rate = htmlspecialchars($_POST['rating']);
 	$photo = "palceholder.jpg";
 	//TODO Localização e adicionar utilizador 
 	$restaurant_id = strval($countedLength+1);

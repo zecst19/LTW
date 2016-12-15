@@ -3,18 +3,22 @@
 	session_start();
     $db = new PDO('sqlite:Tables.db');
 	$username = $_SESSION['username'];
-	
-	if(isset($_POST['Name'] )){
+	$name = htmlspecialchars($_POST['Name']);
+	$desc = htmlspecialchars($_POST['Desc']);
+	$cont = htmlspecialchars($_POST['Cont']);
+	$restId = htmlspecialchars($_POST['restId']);
+	if(isset($name)){
 		$stmt = $db->prepare('UPDATE restaurant SET name = ?  WHERE id_restaurant = ?');
-		$stmt->execute(array($_POST['Name'],$_POST['restId']));
+		$stmt->execute(array($name,$restId));
+		
 	}
-	if(isset($_POST['Desc'] )){
+	if($desc!= NULL ){
 		$stmt = $db->prepare('UPDATE restaurant SET description = ?  WHERE id_restaurant = ?');
-		$stmt->execute(array($_POST['Desc'],$_POST['restId']));
+		$stmt->execute(array($desc,$restId));
 	}
-	if(isset($_POST['Cont'])){
+	if($cont!= NULL){
 		$stmt = $db->prepare('UPDATE restaurant SET contact = ?  WHERE id_restaurant = ?');
-		$stmt->execute(array($_POST['Cont'],$_POST['restId']));
+		$stmt->execute(array($cont,$restId));
 	}
 	
 	header('Location: restaurantPage.php');
