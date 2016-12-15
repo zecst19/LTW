@@ -15,32 +15,41 @@
 	
 	$result = $stmt->fetchAll();}
 	//TODO Procurar restuarantes de q e dono
+	
 ?>
 <html>
  <head>
     <title>restaurantDisplay</title>
     <meta charset="utf-8">
-	<script type="text/javascript" src="script1.js" defer></script>
+	<link rel='stylesheet' type='text/css' href='userProfile.css'>
+	<script type="text/javascript" src="userProfile.js" defer></script>
  </head>
  <body>
-	<div id="parent">
+	<?php
+	/*<div id="parent">
 	This is the main container.
 	<div id="popup" style="display: none">some text here</div>
-	</div>
+	</div>*/ ?>
 	
 
 	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL) { ?>
 	<form action="changePassword.php" method="post">
-		<p class="UserName">Email</p>
+		<button class="accordion" type="button" >Email</button>
+		<div class="panel">
 		<p><?= $result[0]['email'] ?> </p>
-		<p class="PassDisplay">Password </p>
+		</div>
+		<button class="accordion" type="button">Password </button>
+		<div class="panel">
 		<p class="PassDisplay">********</p>
 		<input  type="submit" name= "Action" value= "Change Password " onClick = "function()">
+		</div>
 	</form>	
 	<form action="changeName.php" method="post">	
-		<p class="RestaurantDescription">Name</p>
+		<button class="accordion" type="button">Name</button>
+		<div class="panel">
 		<p><?= $result[0]['first_name'] ?> <?= $result[0]['last_name'] ?></p>
 		<input  type="submit" name= "Action" value= "Change">
+		</div >
 	</form>
 	<form action="addRestaurant.php" method="post">	
 		<p> Click here to add a new restaurant!</p>
