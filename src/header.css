@@ -1,18 +1,45 @@
-body{
+/*body{
 	/*background: #ffffff;
 	background-image: url("../resources/eder.jpg");
 	background-size: cover;
     background-repeat: no-repeat;
-	background-attachment: fixed;*/
+	background-attachment: fixed;
 	font-family: "Open Sans", sans-serif;
 	margin: 0px;
 	overflow: hidden;
-}
+}*/
 
 @font-face {
   font-family: MyCroissant;
   src: url("../fonts/CroissantOne-Regular.ttf");
   font-weight: bold;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #cb202d;
+}
+
+.button{
+	background-color: #cb202d;
+	border: 2px solid black;
+	border-radius: 5px;
+	color: black;
+	font-size: 200%;
+	font-family: MyCroissant;
+	font-size: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	font-size: 20px;
+	transform: translate(-10%, 180%)
+}
+
+/*
+a{
+	color: inherit;
 }
 
 h1{
@@ -22,15 +49,13 @@ h1{
 	position: absolute;
 	right: 0px;
 	left:0px;
+	padding: 1rem;
 	background-color: #cb202d;
 }
 
-a{
-	color: inherit;
-}
 
 img{
 	display: block;
 	margin-right: auto;
 	
-}
+}*/

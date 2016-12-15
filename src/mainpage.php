@@ -1,0 +1,6 @@
+<?php
+ $PageTitle='Home Page';
+
+include_once 'header.php';
+include_once 'HomePage.php';
+include_once 'footer.php';?>  
