@@ -1,15 +1,36 @@
+body{
+	/*background: #ffffff;
+	background-image: url("../resources/eder.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-attachment: fixed;*/
+	font-family: "Open Sans", sans-serif;
+	margin: 0px;
+	overflow: hidden;
+}
+
 @font-face {
   font-family: MyCroissant;
   src: url("../fonts/CroissantOne-Regular.ttf");
   font-weight: bold;
 }
 
-
 h1{
-	font-family: MyCroissant;
-	text-align: left;
+	font-family: sans-serif;
+	text-align: right;
 	margin-top:0px;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	position: absolute;
+	right: 0px;
+	left:0px;
 	background-color: #cb202d;
+}
+
+a{
+	color: inherit;
+}
+
+img{
+	display: block;
+	margin-right: auto;
+	
 }
