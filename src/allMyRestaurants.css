@@ -1,0 +1,64 @@
+body{
+	background: #f8e0b3;
+	margin: 0px;
+	/*background-image: url("../resources/eder.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-attachment: fixed;*/
+}
+
+@font-face {
+  font-family: MyCroissant;
+  src: url("../fonts/CroissantOne-Regular.ttf");
+  font-weight: bold;
+}
+
+h1{
+	font-family: MyCroissant;
+	text-align: left;
+	margin-top:0px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	padding-left: 60px;
+	background-color: #cb202d;
+
+}
+
+a{
+	color: inherit;
+}
+
+#restaurantName{
+	/*
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 30px;*/
+	margin-left: 8%;
+	margin-right: 80%;
+	margin-bottom: 0.3%;
+    background: #fff;
+    color: #000;
+    font-size: 32px;
+    border-radius: 5px;
+	font: bold 15px MyCroissant;
+	padding: 5px;
+	text-align: center;
+	overflow: hidden;
+    white-space: nowrap;
+	
+	
+}
+
+button{
+	margin-left: 12%;
+	margin-right: 80%;
+	margin-bottom: 10px;
+    background: #cb202d;
+    color: #fff;
+    font-size: 32px;
+    border-radius: 5px;
+	font: bold 15px MyCroissant;
+	padding: 0px 5px 5px;
+	
+}

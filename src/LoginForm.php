@@ -6,7 +6,7 @@
  <head>
     <title>LoginForm</title>
     <meta charset="utf-8">
-	<?php //<link rel='stylesheet' type='text/css' href='LoginForm.css'> ?>
+	<link rel='stylesheet' type='text/css' href='LoginForm.css'>	
   </head>
   <body>
 	<?php if (isset($_SESSION['username']) && ($_SESSION['username']== "failed")) { $_SESSION['username'] = NULL; ?>

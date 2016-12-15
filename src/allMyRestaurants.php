@@ -9,7 +9,7 @@
 	$stmtuser->execute(array($username));
 	$result= $stmtuser->fetchAll();
 	$user_id = $result[0]['id_user'];
-	var_dump($user_id);
+	//var_dump($user_id);
 	
 	$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_user = ?');
 	$stmt->execute(array($user_id));
@@ -22,13 +22,14 @@
  <head>
     <title>restaurantDisplay</title>
     <meta charset="utf-8">
+<link rel='stylesheet' type='text/css' href='allMyRestaurants.css'>
  </head>
  <body>
 	<form action="restaurantPage.php" method="post">
 	<?php if(!isset($_SESSION['nousername'])){ foreach( $result as $row) { ?>
-		<p class="RestaurantName">Restaurant Name</p>
-		<p><?= $row['name'] ?> </p>
-		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">Send</button>
+		<!-- <p class="RestaurantName">Restaurant Name</p> -->
+		<p id="restaurantName"><?= $row['name'] ?> </p>
+		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">Edit Info</button>
 		<?php } }?>
 	</form>
  </body>
