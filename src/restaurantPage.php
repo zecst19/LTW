@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	include_once("loginScreen.php");
+	include_once("header.php");
 	//TODO tirar o comentario se necessário
 	//session_start();
 	

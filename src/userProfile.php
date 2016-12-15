@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	include_once("loginScreen.php");
+	include_once("header.php");
 	//TODO tirar o comentario se necessário
 	//session_start();
 	
@@ -20,15 +20,22 @@
  <head>
     <title>restaurantDisplay</title>
     <meta charset="utf-8">
+	<script type="text/javascript" src="script1.js" defer></script>
  </head>
  <body>
+	<div id="parent">
+	This is the main container.
+	<div id="popup" style="display: none">some text here</div>
+	</div>
+	
+
 	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL) { ?>
 	<form action="changePassword.php" method="post">
 		<p class="UserName">Email</p>
 		<p><?= $result[0]['email'] ?> </p>
 		<p class="PassDisplay">Password </p>
 		<p class="PassDisplay">********</p>
-		<input  type="submit" name= "Action" value= "Change Password ">
+		<input  type="submit" name= "Action" value= "Change Password " onClick = "function()">
 	</form>	
 	<form action="changeName.php" method="post">	
 		<p class="RestaurantDescription">Name</p>
