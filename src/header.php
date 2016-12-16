@@ -1,5 +1,8 @@
 <!doctype html>
+<?php
+	$_SESSION['toggler'] = TRUE;
 
+?>
 <html>
   <head>
     <title><?php echo $PageTitle; ?></title>
@@ -8,82 +11,41 @@
 	<link rel='stylesheet' type='text/css' href='footer.css'>
 	<style>
 
-
-@keyframes showHeader {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes hideHeader {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes dropHeader {
-  0% {
-    transform: translateY(-600%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .loginUrl2 {
     padding: 0 18px;
     background-color: white;
-    max-height: 500px;
+    max-height: 0px;
     overflow: hidden;
-	
-	
-	animation-name: showHeader;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 0.6s;
-	animation-direction: alternate;
+	transition: ease-out 1.6s;
 }
 
-.loginUrl3 {
-    background-color: white;
-    overflow: hidden;
-    opacity: 1;
-	animation-name: dropHeader;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 0.5s;
+.loginUrl2.trans {
+	
+	max-height: 500px;
+	transition: ease-out 1.6s;
 }
 
 
 </style>
   </head>
   <body>
-  <?php//bagaco isto ta so comentado pa veres como e q ta, quando voltares e vires isto diz me para eu ir po skype contigo e por o ajax em conjunto com o q tas a fazer 
-	/*<header id="header">
+<header id="header">
 	<div class="container">
 	<div>
 	<a href="./mainpage.php"><img src="../resources/logo/LogoBlack.png" alt="Sublime Logo" width="200" height="100"/></a>
 	</div>
 	<form>
-	<input class="button" type="button" value="LogIn/ Register" onclick="window.location.href='loginScreen.php'" />
+	<input class="button" type="button" value="LogIn/ Register"  onclick="loadDoc()"/>
 	</form>
 	</div>
-</header>*/?>
-<h1><a href="./HomePage.php"  style="text-decoration:none">Sublime</a></h1>
-<h4><a class="loginUrl"  onclick="loadDoc()"  style="text-decoration:none">Login/Register</a></h4>
-<h4><a class="loginUrl2" id="loginUrl2" style="text-decoration:none;display:none">Can't see this</a></h4>
-<h4><a class="loginUrl3"  onclick="loadDoc2()" style="text-decoration:none;display:none">Close login</a></h4>
+</header>
+<h4><a class="loginUrl2" id="loginUrl2" style="text-decoration:none;display:block">Can't see this</a></h4>
 <script>
 
 	
 
 function loadDoc() {
+	
   var xhttp;
   if (window.XMLHttpRequest) {
     // code for modern browsers
@@ -94,13 +56,15 @@ function loadDoc() {
   }
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementsByClassName("loginUrl")[0].style.display = 'none';
+		
 	  document.getElementsByClassName("loginUrl2")[0].innerHTML = this.responseText;
 	  document.getElementsByClassName("loginUrl2")[0].style.display = 'block';
-	  document.getElementsByClassName("loginUrl3")[0].style.display = 'block';
+	  document.getElementsByClassName("loginUrl2")[0].classList.add('trans');
+	  document.getElementsByClassName("button")[0].setAttribute( "onClick", "javascript: loadDoc2();" );
 	 
     }
   };
+  
   xhttp.open("GET", "loginScreen.php", true);
   xhttp.send();
 }
@@ -115,14 +79,20 @@ function loadDoc2() {
   }
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementsByClassName("loginUrl2")[0].style.display = 'none';
-	  document.getElementsByClassName("loginUrl")[0].style.display = 'block';
-	  document.getElementsByClassName("loginUrl3")[0].style.display = 'none';
+      //document.getElementsByClassName("loginUrl2")[0].style.display = 'none';
+	   document.getElementsByClassName("loginUrl2")[0].classList.remove('trans');
+	  document.getElementsByClassName("button")[0].setAttribute( "onClick", "javascript: loadDoc3();" );
+	  
 	 
     }
   };
   xhttp.open("GET", "loginScreen.php", true);
   xhttp.send();
+}
+
+function loadDoc3() {
+	document.getElementsByClassName("loginUrl2")[0].classList.add('trans');
+	  document.getElementsByClassName("button")[0].setAttribute( "onClick", "javascript: loadDoc2();" );
 }
 </script>
 
