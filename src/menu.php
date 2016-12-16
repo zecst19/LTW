@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html> 
-	  <head> 
-		 <meta charset="utf-8">
+
 		 <link rel='stylesheet' type='text/css' href='menu.css'>
 		 <script type="text/javascript" src="menu.js"></script>
  
@@ -13,5 +11,4 @@
 	  </div>
 
 <!-- Use any element to open the sidenav -->
-	<span style="font-size:30px;cursor:pointer; font-family: sans-serif;" onclick="openNav()">&#9776; Menu</span>
-</html>
+	<span style="font-size:30px;cursor:pointer; font-family: MyCroissant; color: #cb202d;" onclick="openNav()">&#9776; Menu</span>

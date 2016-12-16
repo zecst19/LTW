@@ -6,10 +6,18 @@
 
 body
 {
-    background-color: #f8e0b3;
+    background-color: #111;
 	margin: 0;
 	font-family: MyCroissant;
 }
+
+.teaser {
+	float: right;
+	width: 60% !important;
+	height: auto !important;
+	transform: translate(0, -8%);
+}
+
 /*
 @media screen and (min-width: 500px) {
    body {
@@ -22,7 +30,7 @@ body
       width:720px;
    }
 }
-/*
+
 h3 {
 	font-family: MyCroissant;
 	font-size: 500%;
@@ -33,12 +41,5 @@ h3 {
     top: 30%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-}
-
-
-#bgvid {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 }*/
+

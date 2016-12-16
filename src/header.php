@@ -8,23 +8,7 @@
     <title><?php echo $PageTitle; ?></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel='stylesheet' type='text/css' href='header.css'>
-	<link rel='stylesheet' type='text/css' href='footer.css'>
 	<style>
-
-.loginUrl2 {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0px;
-    overflow: hidden;
-	transition: ease-out 1.6s;
-}
-
-.loginUrl2.trans {
-	
-	max-height: 500px;
-	transition: ease-out 1.6s;
-}
-
 
 </style>
   </head>
@@ -34,6 +18,7 @@
 	<div>
 	<a href="./mainpage.php"><img src="../resources/logo/LogoBlack.png" alt="Sublime Logo" width="200" height="100"/></a>
 	</div>
+	<?php include 'findRestaurantBar.php'?>
 	<form>
 	<input class="button" type="button" value="LogIn/ Register"  onclick="loadDoc()"/>
 	</form>

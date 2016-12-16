@@ -34,7 +34,26 @@
     text-decoration: none;
     display: inline-block;
 	font-size: 20px;
-	transform: translate(-10%, 180%)
+	transform: translate(-10%, 140%);
+}
+
+.loginUrl2 {
+    padding: 0 18px;
+    background-color: #111;
+	color: #818181;
+    max-height: 0px;
+    overflow: hidden;
+	transition: ease-out 0.6s;
+}
+
+.loginUrl2.trans {
+	
+	max-height: 500px;
+	transition: ease-out 1.6s;
+}
+
+h4{
+	margin:0;
 }
 
 /*
