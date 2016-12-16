@@ -65,11 +65,7 @@ a{
 }
 
 p{
-	/*
-    border: 5px solid #1F497D;
-    background: #ddd;
-    border-radius: 5px;
-    padding: 30px;*/
+	
 	margin-left: 3%;
 	margin-right: 80%;
 	margin-bottom: 0.3%;
@@ -77,8 +73,8 @@ p{
     color: #000;
     font-size: 32px;
     border-radius: 5px;
-	font: bold 15px sans-serif;
-	padding: 5px;
+	font: bold 15px MyCroissant;
+	padding: 1%;
 	overflow: hidden;
     white-space: nowrap;
 	
@@ -92,7 +88,7 @@ p{
     color: #000;
     font-size: 32px;
     border-radius: 5px;
-	font: bold 15px sans-serif;
+	font: bold 15px MyCroissant;
 	padding: 5px;
 	text-align: center;
 	overflow: hidden;
@@ -107,7 +103,7 @@ input{
     color: #fff;
     font-size: 32px;
     border-radius: 5px;
-	font: bold 15px sans-serif;
+	font: bold 15px MyCroissant;
 	padding: 0px 5px 5px;
 	
 }
@@ -120,7 +116,7 @@ input{
     color: #fff;
     font-size: 32px;
     border-radius: 5px;
-	font: bold 15px sans-serif;
+	font: bold 15px MyCroissant;
 	padding: 0px 5px 5px;
 
 }

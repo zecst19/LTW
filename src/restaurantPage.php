@@ -42,26 +42,100 @@
 <html>
  <head>
     <title>restaurantPage</title>
+	<link rel='stylesheet' type='text/css' href='restaurantPage.css'>
+	<style>
+
+	body{
+		background-color:  #111;
+		font-family: MyCroissant;
+		margin:0;
+		color: #cb202d;
+	}
+	
+	.RestaurantName{	
+		font: bold 50px MyCroissant;
+		padding-left: 60px;
+	}
+
+	#RestaurantInfo{
+		border: solid #cb202d;
+		border-radius: 5px;
+		margin-left: 8%;
+		margin-right: 50%;
+		padding: 0px 30px 15px 15px;
+		background: #e5e5e5;
+	}
+
+	.RestaurantDescription, .RestaurantAddress, .RestaurantRating{
+		text-align: right; 
+		font-size: 17px;
+	}
+
+	#Reviews{
+		border: solid #cb202d;
+		border-radius: 5px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		margin-left: 8%;
+		margin-right: 8%;
+		padding: 0px 30px 15px 15px;
+		background: #e5e5e5;
+	}
+
+	button{
+		margin-left: 3%;
+		margin-right: 80%;
+		margin-bottom: 10px;
+		background: #cb202d;
+		color: #fff;
+		font-size: 32px;
+		border-radius: 5px;
+		font: bold 15px MyCroissant;
+		padding: 0px 5px 5px;
+		overflow: hidden;
+		white-space: nowrap;	
+	}
+
+	#review{
+		border: double #cb202d;
+		border-radius: 5px;
+		margin-top: 30px;
+		padding: 0px 30px 15px 15px;
+		background: #e5e5e5;
+	}
+
+	#AddReview{
+		margin-top: 20px;
+	}
+
+	.Reviews{
+		font-size: 20px;
+	}
+
+	</style>
     <meta charset="utf-8">
  </head>
  <body>
-	<p class="RestaurantName">Name</p>
-	<p><?= $result2[0]['name'] ?> </p>
-	<p class="RestaurantDescription">Description</p>
-	<p><?= $result2[0]['description'] ?> </p>
-	<p class="RestaurantAddress">Address</p>
-	<p><?= $result2[0]['address'] ?> </p>
-	<p class="RestaurantRating">Rating</p>
-	<p><?= $result2[0]['rate'] ?> </p>
+	<div id=RestaurantInfo>
+		<p class="RestaurantName"><?= $result2[0]['name'] ?> </p>
+		<p class="RestaurantDescription"><?= $result2[0]['description'] ?> </p>
+		<p class="RestaurantAddress"><?= $result2[0]['address'] ?> </p>
+		<p class="RestaurantRating"><?= $result2[0]['rate'] ?> / 10 </p>
+	</div>
+	<div id=Reviews>
 	<form action="deleteReview.php" method="post">
 		<p class="Reviews">Reviews</p>
+		<div id=review>
 		<?php if(isset($_SESSION['reviewed']) && $_SESSION['reviewed'] != NULL ){$_SESSION['reviewed'] = NULL; foreach( $result as $row) {?>
 		<p><?= $row['commment'] ?> </p>
 		<p><?= $row['rate'] ?> / 10 </p>
 		<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){ if($userid == $row['id_user'] ){ ?>
 		<button type="submit" name= "reviewId" value= "<?= $row['id_review'] ?>">Delete</button>
-		<?php }}}} ?>
+		<?php }}}} ?>	
 	</form>
+	</div>
+
+	<div id=AddReview>
 	<form action="addReview.php" method="post">
 	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){?>
 		<label for="review">Review:</label>
@@ -78,8 +152,8 @@
 	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != NULL){ if($userid == $result2[0]['id_user'] ){ ?>
 		<button  type="submit" name= "restId" value= "<?= $result2[0]['id_restaurant'] ?>">Change Restaurant Parameters</button>
 	<?php }}?>
-	
-		
+	</div>
+		</div>
 	</form>
  </body>
 </html>
