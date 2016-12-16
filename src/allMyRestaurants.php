@@ -31,6 +31,7 @@
 		<!-- <p class="RestaurantName">Restaurant Name</p> -->
 		<div id=restaurant>
 		<p id="restaurantName"><?= $row['name'] ?> </p>
+		<p class="restaurantPhoto"><img src="../resources/<?= $row['photo'] ?>" alt="Photo" style="width:300px;height:250px;"></p>
 		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">View Info</button>
 		<div>
 		<?php } }?>

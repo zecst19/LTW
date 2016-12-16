@@ -50,6 +50,15 @@ a{
 	
 }
 
+.restaurantPhoto{
+	
+    border: 5px solid #cb202d;
+    background: #e5e5e5;
+    border-radius: 5px;
+    padding: 10px;
+	transform: translate(10%,0);
+}
+
 button{
 	margin-left: 12%;
 	margin-right: 80%;
