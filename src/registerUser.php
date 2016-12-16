@@ -13,13 +13,13 @@
 	<fieldset>
 	<legend align="bottom">Register</legend>
 	<label>
-     First Name: <input type="text" name="First" placeholder="Username">
+     First Name: <input type="text" name="First" placeholder="Name">
 	</label>
 	<label>
-	 Last Name: <input type="text" name="Last" placeholder="Username">
+	 Last Name: <input type="text" name="Last" placeholder="Name">
 	 </label>
 	 <label>
-	 Email: <input type="text" name="email" placeholder="Username">
+	 Email: <input type="text" name="email" placeholder="Email">
 	 </label>
 	  <label>
      Password: <input type="password" name="password" placeholder="Password">

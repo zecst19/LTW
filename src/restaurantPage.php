@@ -71,6 +71,7 @@
 		margin-right: 50%;
 		padding: 0px 30px 15px 15px;
 		background: #e5e5e5;
+		transform: translate(0,10%);
 	}
 
 	.RestaurantDescription, .RestaurantAddress, .RestaurantRating{
@@ -88,7 +89,7 @@
 		margin-right: 8%;
 		padding: 0px 30px 15px 15px;
 		background: #e5e5e5;
-		transform: translate(0,-500px);
+		transform: translate(0,-70%);
 	}
 
 	button{
@@ -126,7 +127,7 @@
 		border-radius: 5px;
 		width: 600px;
 		height: 600px;
-		transform: translate(150%,-110%);
+		transform: translate(170%,-100%);
 	}
 	
 	</style>

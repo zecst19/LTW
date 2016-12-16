@@ -1,73 +1,27 @@
-body{
-	background: #f8e0b3;
-	margin: 0px;
-	/*background-image: url("../resources/eder.jpg");
-	background-size: cover;
-    background-repeat: no-repeat;
-	background-attachment: fixed;*/
-}
 
-@font-face {
-  font-family: MyCroissant;
-  src: url("../fonts/CroissantOne-Regular.ttf");
-  font-weight: bold;
-}
-
-h1{
-	font-family: MyCroissant;
-	text-align: left;
-	margin-top:0px;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background-color: #cb202d;
-}
-
-fieldset, legend{
-	margin: 0;
-	padding: 0;
-}
-
-fieldset {
-    font-family: sans-serif;
-    border: 5px solid #cb202d;
-	border-style: solid hidden hidden;
-    background: #ddd;
-    padding: 30px;
-	margin-left: 10%;
-	margin-right: 10%;
-}
-	
-legend {
-	text-align: center;
-	color: #cb202d;
-	font-size: 32px;
-    padding: 5px 10px ; 
-    border: 5px solid #cb202d;
-	border-style: solid hidden hidden;
-    margin-left: 43%;
-	margin-top: 30%;
-	overflow: hidden;
-    white-space: nowrap;
-	margin-top: 20%;
-	transform: translate(0,46%);
-	
-}
 
 label{
-	font: bold 20px Courier;
+	font: bold 15px MyCroissant;
+	color: #fff;
 	padding: 5px;
+	float: left;
 }
 
-#register {
-	position: static;
-	width: 50%;
-    float: right;
-    height: 200px;
+input{
+	background: #fff;
+	float:left;
 }
 
-#login {
-	position: static;
-	width: 50%;
-    float: left;
-    height: 200px;
+input[type=submit]{
+	float:left;
+	margin-left:20px;
+}
+
+legend{
+	font-size: 20px;
+	color: #fff;
+}
+
+p {
+	margin-bottom:0;
 }

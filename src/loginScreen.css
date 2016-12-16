@@ -1,15 +1,14 @@
-@font-face {
+
+
+/*@font-face {
   font-family: MyCroissant;
   src: url("../fonts/CroissantOne-Regular.ttf");
 }
 
 body{
-	background: #ffffff;
+	background: #111;
 	margin: 0px;
-	/*background-image: url("../resources/eder.jpg");
-	background-size: cover;
-    background-repeat: no-repeat;
-	background-attachment: fixed;*/
+	
 }
 
 h1{
@@ -69,4 +68,4 @@ label{
 	width: 50%;
     float: left;
     height: 200px;
-}
+}*/

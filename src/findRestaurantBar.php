@@ -4,7 +4,7 @@
 	
 ?>
 <style> 
-input[type=text] {
+input[type=search] {
     width: 130px;
 	height: 30px;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ input[type=text] {
 	text-align: left;
 }
 
-input[type=text]:focus {
+input[type=search]:focus {
     width: 80%;
 }
 
@@ -42,7 +42,7 @@ input{
 </style>
 
 	<form action="findRestaurant.php" method="post">
-		<input type="text" name="variable" placeholder= &#128269;>
+		<input type="search" name="variable" placeholder= &#128269;>
 		<input  type="submit" name= "Action" value= "Search">
 	</form>
  
