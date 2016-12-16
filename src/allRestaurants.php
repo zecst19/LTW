@@ -14,7 +14,7 @@
 	$stmt = $db->prepare('SELECT * FROM restaurant WHERE id_user = ?');
 	$stmt->execute(array($user_id));
 	$result= $stmt->fetchAll();
-	
+	include_once 'header.php';
 	
 	
 ?>
@@ -56,7 +56,7 @@
 		border-radius: 5px;
 		padding: 30px;*/
 		margin-left: 8%;
-		margin-right: 80%;
+		margin-right: 70%;
 		margin-bottom: 0.3%;
 		background: #e5e5e5;
 		color: #000;
@@ -76,7 +76,7 @@
 		border: 5px solid #cb202d;
 		background: #e5e5e5;
 		border-radius: 5px;
-		width: 16%;
+		width: 25%;
 		padding: 10px;
 		transform: translate(100%,0);
 	}
@@ -91,7 +91,7 @@
 		border-radius: 5px;
 		font: bold 15px MyCroissant;
 		padding: 0px 5px 5px;
-		transform: translate(230%,0);
+		transform: translate(350%,0);
 		
 	}
 

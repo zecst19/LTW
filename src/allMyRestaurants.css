@@ -35,7 +35,7 @@ a{
     border-radius: 5px;
     padding: 30px;*/
 	margin-left: 8%;
-	margin-right: 80%;
+	margin-right: 70%;
 	margin-bottom: 0.3%;
     background: #e5e5e5;
     color: #000;
@@ -55,6 +55,7 @@ a{
     border: 5px solid #cb202d;
     background: #e5e5e5;
     border-radius: 5px;
+	width: 25%;
     padding: 10px;
 	transform: translate(10%,0);
 }

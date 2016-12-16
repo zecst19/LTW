@@ -44,8 +44,7 @@
     <title>restaurantPage</title>
 	<link rel='stylesheet' type='text/css' href='restaurantPage.css'>
 	<style>
-
-	body{
+body{
 		background-color:  #111;
 		font-family: MyCroissant;
 		margin:0;
@@ -89,7 +88,7 @@
 		margin-right: 8%;
 		padding: 0px 30px 15px 15px;
 		background: #e5e5e5;
-		transform: translate(0,-70%);
+		transform: translate(0,-50%);
 	}
 
 	button{
@@ -125,9 +124,9 @@
 	#RestaurantMap{	
 		border: solid #cb202d;
 		border-radius: 5px;
-		width: 600px;
-		height: 600px;
-		transform: translate(170%,-100%);
+		width: 400px;
+		height: 400px;
+		transform: translate(170%,-120%);
 	}
 	
 	</style>
@@ -142,7 +141,7 @@
 		<p class="RestaurantRating"><?= $result2[0]['rate'] ?> / 10 </p>
 	</div>
 	<div id=RestaurantMap>
-		<iframe width="600" height="600" frameborder="0" style="border:0" 
+		<iframe width="400" height="400" frameborder="0" style="border:0" 
 		src="https://www.google.com/maps/embed/v1/place?q=<?= $result2[0]['name'] ?><?= $result2[0]['address'] ?>&key=AIzaSyDt5yy_q9VV-zcyR-kKeXEo9sTybPcmPig" allowfullscreen>
 		</iframe>
 	</div>
