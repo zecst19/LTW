@@ -27,7 +27,7 @@
 	<?php }else if (isset($_SESSION['username']) && ($_SESSION['username']!= NULL)) { ?>
 	<form action="userProfile.php" method="post">
 	<p class="LoggedIn!">Welcome <?= $_SESSION['username']?></p>
-	<input  type="submit" value= "See Profile">
+	<input type="submit" value= "See Profile">
 	</form>
 	<form action="logout.php" method="post">
 	<input  type="submit" value= "Log Out">

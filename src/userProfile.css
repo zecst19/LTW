@@ -64,22 +64,6 @@ a{
 	color: inherit;
 }
 
-p{
-	
-	margin-left: 3%;
-	margin-right: 80%;
-	margin-bottom: 0.3%;
-    background: #fff;
-    color: #000;
-    font-size: 32px;
-    border-radius: 5px;
-	font: bold 15px MyCroissant;
-	padding: 1%;
-	overflow: hidden;
-    white-space: nowrap;
-	
-}
-
 #clickToAdd{
 	margin-left: 17%;
 	margin-right: 68%;

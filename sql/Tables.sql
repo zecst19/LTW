@@ -32,7 +32,16 @@ CREATE TABLE location_restaurant(id_location int REFERENCES location(id_location
 								
 								
 								
-
+insert into user values(1, 'Joao', 'Castro','pandasarehere@gmail.com','uphoto1','Salsichas420',1);
+insert into user values(2, 'Tiago', 'Pacheco','avidadepi@gmail.com','uphoto2','Bagacocommel2',0);
+insert into user values(3, 'Manuel', 'Gomes','timonepumba@gmail.com','uphoto3','Altibor5',0);
+insert into user values(4, 'Vasco', 'Ferreira','calcitrinmd@gmail.com','uphoto4','Papibaquigrafos1',0);
+insert into user values(5, 'Alcino', 'Mendes','victormoses@gmail.com','uphoto5','4Governo',0);
+insert into user values(6, 'Rodrigo', 'Santoro','monstrosvsaliens@gmail.com','uphoto6','VaiSer4',0);
+insert into user values(7, 'Joao', 'Gonçalves','pois.pois@gmail.com','uphoto7','Pois2',0);
+insert into user values(8, 'Nuno', 'Assunção','montalegre@gmail.com','uphoto8','Pelopidas1',0);
+insert into user values(9, 'David', 'Magalhães','binhotinto@gmail.com','uphoto9','Salsichas430',0);
+insert into user values(10, 'Rui', 'Costa','benfas@gmail.com','uphoto10','AndreAlmeida19',0);
 
 insert into restaurant values(1,1,'TidBit','italian restaurant and pizzeria', 10,'925128087', 'photo1','avenida de fernao de magalhaes 2961');
 insert into restaurant values(2,1,'Casa de Pasto Zé de Ver','tasca', 8,'925128087', 'photo2','avenida de fernao de magalhaes 2961');

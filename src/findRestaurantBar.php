@@ -43,6 +43,6 @@ input{
 
 	<form action="findRestaurant.php" method="post">
 		<input type="search" name="variable" placeholder= &#128269;>
-		<input  type="submit" name= "Action" value= "Search">
+		<input type="submit" name= "Action" value= "Search">
 	</form>
  

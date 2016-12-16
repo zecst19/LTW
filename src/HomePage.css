@@ -11,11 +11,16 @@ body
 	font-family: MyCroissant;
 }
 
-.teaser {
-	float: right;
+.video-container video {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 64.75%;
+	transform: translate(0, -8%);
+/*
 	width: 60% !important;
 	height: auto !important;
-	transform: translate(0, -8%);
+	transform: translate(40%, -8%);*/
 }
 
 /*

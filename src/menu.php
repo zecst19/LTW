@@ -5,9 +5,9 @@
  
 	  <div id="mySidenav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#">Restaurants</a>
+	  <a href="./allRestaurants.php">Restaurants</a>
 	  <a href="#">Bars</a>
-	  <a href="#">About Us</a>
+	  <a href="./aboutUs.php">About Us</a>
 	  </div>
 
 <!-- Use any element to open the sidenav -->

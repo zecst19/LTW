@@ -2,24 +2,25 @@
 
 label{
 	font: bold 15px MyCroissant;
-	color: #fff;
+	color: #111;
 	padding: 5px;
 	float: left;
 }
 
 input{
-	background: #fff;
+	background: #cb202d;
 	float:left;
 }
 
 input[type=submit]{
 	float:left;
+	background: #cb202d
 	margin-left:20px;
 }
 
 legend{
 	font-size: 20px;
-	color: #fff;
+	color: #111;
 }
 
 p {

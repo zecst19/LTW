@@ -178,7 +178,6 @@
 		</div >
 	</form>
 	<form action="addRestaurant.php" method="post">	
-		<p id="clickToAdd"> Click here to add a new restaurant!</p>
 		<input id="addNewRestaurant" type="submit" name= "Action" value= "Add new Restaurant">
 	</form>
 	<?php include_once("allMyRestaurants.php");}else{ ?>
