@@ -54,7 +54,14 @@
 	
 	.RestaurantName{	
 		font: bold 50px MyCroissant;
-		padding-left: 60px;
+		padding-left: 50px;
+	}
+
+	.RestaurantPhoto{	
+		border: solid #cb202d;
+		border-radius: 5px;
+		width: 500px;
+		height: 320px;
 	}
 
 	#RestaurantInfo{
@@ -69,6 +76,7 @@
 	.RestaurantDescription, .RestaurantAddress, .RestaurantRating{
 		text-align: right; 
 		font-size: 17px;
+		padding-top: 15px;
 	}
 
 	#Reviews{
@@ -118,6 +126,7 @@
  <body>
 	<div id=RestaurantInfo>
 		<p class="RestaurantName"><?= $result2[0]['name'] ?> </p>
+		<p class="RestaurantPhoto"><img src="../resources/<?= $result2[0]['photo'] ?>" alt="Photo" style="width:500px;height:320px;"></p>
 		<p class="RestaurantDescription"><?= $result2[0]['description'] ?> </p>
 		<p class="RestaurantAddress"><?= $result2[0]['address'] ?> </p>
 		<p class="RestaurantRating"><?= $result2[0]['rate'] ?> / 10 </p>
