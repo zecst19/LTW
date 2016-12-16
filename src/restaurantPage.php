@@ -88,6 +88,7 @@
 		margin-right: 8%;
 		padding: 0px 30px 15px 15px;
 		background: #e5e5e5;
+		transform: translate(0,-500px);
 	}
 
 	button{
@@ -120,6 +121,14 @@
 		font-size: 20px;
 	}
 
+	#RestaurantMap{	
+		border: solid #cb202d;
+		border-radius: 5px;
+		width: 600px;
+		height: 600px;
+		transform: translate(150%,-110%);
+	}
+	
 	</style>
     <meta charset="utf-8">
  </head>
@@ -130,6 +139,11 @@
 		<p class="RestaurantDescription"><?= $result2[0]['description'] ?> </p>
 		<p class="RestaurantAddress"><?= $result2[0]['address'] ?> </p>
 		<p class="RestaurantRating"><?= $result2[0]['rate'] ?> / 10 </p>
+	</div>
+	<div id=RestaurantMap>
+		<iframe width="600" height="600" frameborder="0" style="border:0" 
+		src="https://www.google.com/maps/embed/v1/place?q=<?= $result2[0]['name'] ?><?= $result2[0]['address'] ?>&key=AIzaSyDt5yy_q9VV-zcyR-kKeXEo9sTybPcmPig" allowfullscreen>
+		</iframe>
 	</div>
 	<div id=Reviews>
 	<form action="deleteReview.php" method="post">
