@@ -22,7 +22,7 @@ button.accordion.active, button.accordion:hover {
 
 div.panel {
     padding: 0 18px;
-    background-color: f8e0b3;
+    background-color: #f8e0b3;
     max-height: 0;
     overflow: hidden;
     transition: 0.6s ease-in-out;
@@ -35,7 +35,7 @@ div.panel.show {
 }
 
 body{
-	background: #f8e0b3;
+	background: #111;
 	margin: 0px;
 	/*background-image: url("../resources/eder.jpg");
 	background-size: cover;

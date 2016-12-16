@@ -26,11 +26,15 @@
  </head>
  <body>
 	<form action="restaurantPage.php" method="post">
+
 	<?php if(!isset($_SESSION['nousername'])){ foreach( $result as $row) { ?>
 		<!-- <p class="RestaurantName">Restaurant Name</p> -->
+		<div id=restaurant>
 		<p id="restaurantName"><?= $row['name'] ?> </p>
-		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">Edit Info</button>
+		<button  type="submit" name= "restId" value= "<?= $row['id_restaurant'] ?>">View Info</button>
+		<div>
 		<?php } }?>
+	
 	</form>
  </body>
 </html>
